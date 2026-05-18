@@ -1,0 +1,38 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Terraform variables
+*.tfvars
+*.tfvars.json
+
+# Overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Environment
+.env
+.env.*
+
+# Secrets
+*.pem
+*.key
+
+# VS Code
+.vscode/
+
+# Claude / AI tooling
+.claude/
+claude.local.md
+*.claude.tmp
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
