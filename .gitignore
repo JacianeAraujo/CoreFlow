@@ -21,6 +21,9 @@ override.tf.json
 # Secrets
 *.pem
 *.key
+*.pfx
+*.cer
+*.crt
 
 # VS Code
 .vscode/
@@ -36,3 +39,66 @@ claude.local.md
 # OS
 .DS_Store
 Thumbs.db
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# JetBrains Rider
+.idea/
+
+# Claude / AI Tooling
+.claude/
+claude.local.md
+*.claude.tmp
+
+# .NET Build Artifacts
+bin/
+obj/
+publish/
+artifacts/
+
+# Test Results & Coverage
+TestResults/
+coverage/
+coverage-report/
+*.coverage
+*.trx
+
+# NuGet
+packages/
+*.nupkg
+
+# ASP.NET / Static Assets
+wwwroot/lib/
+
+# Entity Framework Local Databases
+*.mdf
+*.ldf
+
+# Azure Functions Local Settings
+local.settings.json
+
+# AWS Lambda
+aws-lambda-tools-defaults.json.user
+
+# Temporary Files
+*.tmp
+*.temp
+*.cache
+
+# Angular / Node.js
+node_modules/
+dist/
+.angular/
+.npm/
+
+# Generated Files
+Generated/
+generated/

@@ -1,0 +1,14 @@
+{
+  "Information": [
+    "Defaults consumed by 'dotnet lambda' tooling. Adjust during deployment."
+  ],
+  "profile": "default",
+  "region": "us-east-1",
+  "configuration": "Release",
+  "function-runtime": "dotnet8",
+  "function-memory-size": 512,
+  "function-timeout": 60,
+  "function-handler": "OrderFileIngestion::CoreFlow.OrderFileIngestion.Function::HandleAsync",
+  "function-name": "order-file-ingestion-lambda",
+  "framework": "net8.0"
+}
