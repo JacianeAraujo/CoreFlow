@@ -28,6 +28,7 @@ The system contains the following microservices:
 # System Flow
 
 1. Order Service receives orders
+1.1 Adicionar log utizando serilog (Structured Logs -> Loki -> Grafana)
 2. Orders are stored in PostgreSQL
 3. OrderCreatedEvent is published to SNS
 4. SNS distributes messages to SQS queues

@@ -8,4 +8,5 @@ public sealed record ReconciliationBatchEvent
     public required string Key { get; init; }
     public required string Provider { get; init; }
     public required DateTime ReceivedAt { get; init; }
+    public string CorrelationId { get; set; } = default!;
 }

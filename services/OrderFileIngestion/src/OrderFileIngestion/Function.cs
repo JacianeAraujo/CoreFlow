@@ -2,6 +2,7 @@ using Amazon.Lambda.Core;
 using Amazon.Lambda.S3Events;
 using Amazon.S3;
 using Amazon.SimpleNotificationService;
+using CoreFlow.OrderFileIngestion.Logging;
 using CoreFlow.OrderFileIngestion.Models;
 using CoreFlow.OrderFileIngestion.Options;
 using CoreFlow.OrderFileIngestion.Services;
@@ -36,12 +37,7 @@ public sealed class Function
         _sns = sns;
         _options = options;
 
-        var loggerFactory = LoggerFactory.Create(builder => builder.AddSimpleConsole(opts =>
-        {
-            opts.SingleLine = true;
-            opts.TimestampFormat = "yyyy-MM-ddTHH:mm:ss.fffZ ";
-            opts.UseUtcTimestamp = true;
-        }));
+        var loggerFactory = LoggingConfiguration.CreateLoggerFactory();
 
         _logger = loggerFactory.CreateLogger<Function>();
         _metadataValidator = new FileMetadataValidator(options);
@@ -113,6 +109,7 @@ public sealed class Function
             Key = key,
             Provider = metadata.Provider,
             ReceivedAt = DateTime.UtcNow,
+            CorrelationId = requestId
         };
 
         await _publisher.PublishAsync(_options.ReconciliationTopicArn, batch, cancellationToken);
