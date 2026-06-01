@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: CloudWatch
+    type: cloudwatch
+    uid: cloudwatch
+    access: proxy
+    isDefault: true
+    jsonData:
+      authType: default
+      defaultRegion: us-east-1
